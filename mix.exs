@@ -15,8 +15,12 @@ defmodule Arena3dGameServer.Mixfile do
   # Type "mix help compile.app" for more information
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
-    [extra_applications: [:logger],
-     mod: {Arena3dGameServer.Application, []}]
+    [
+      extra_applications: [
+        :logger,
+      ],
+      mod: {Arena3dGameServer.Application, []}
+    ]
   end
 
   # Dependencies can be Hex packages:
@@ -29,6 +33,12 @@ defmodule Arena3dGameServer.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    []
+    [
+      {:path_finder, git: "https://github.com/nanaki04/PathFinder.git"},
+      {:life_bloom, git: "https://github.com/nanaki04/LifeBloom.git"},
+      {:guardian, git: "https://github.com/nanaki04/Guardian.git"},
+      {:dialyxir, "~> 0.5", only: [:dev], runtime: false},
+      {:ex_doc, "~> 0.16", only: [:dev], runtime: false},
+    ]
   end
 end

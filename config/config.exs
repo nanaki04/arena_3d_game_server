@@ -20,6 +20,8 @@ use Mix.Config
 #
 #     config :logger, level: :info
 #
+  config :path_finder,
+    is_destination: true
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment

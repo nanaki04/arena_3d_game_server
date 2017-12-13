@@ -12,6 +12,7 @@ defmodule Arena3dGameServer.Application do
     children = [
       # Starts a worker by calling: Arena3dGameServer.Worker.start_link(arg1, arg2, arg3)
       # worker(Arena3dGameServer.Worker, [arg1, arg2, arg3]),
+      supervisor(Task.Supervisor, [[name: Arena.Task.Supervisor]], restart: :permanent)
     ]
 
     # See http://elixir-lang.org/docs/stable/elixir/Supervisor.html
